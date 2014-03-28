@@ -1,0 +1,58 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    backports (3.6.0)
+    daemons (1.1.9)
+    dalli (2.7.0)
+    etsy (0.2.6)
+      json (>= 1.5.0)
+      oauth (~> 0.4.0)
+    eventmachine (1.0.3)
+    jsmin (1.0.1)
+    json (1.8.1)
+    memcachier (0.0.2)
+    multi_json (1.9.2)
+    oauth (0.4.7)
+    rack (1.5.2)
+    rack-protection (1.5.2)
+      rack
+    rack-test (0.6.2)
+      rack (>= 1.0)
+    sinatra (1.4.4)
+      rack (~> 1.4)
+      rack-protection (~> 1.4)
+      tilt (~> 1.3, >= 1.3.4)
+    sinatra-assetpack (0.3.2)
+      jsmin
+      rack-test
+      sinatra
+      tilt (>= 1.3.0, < 2.0)
+    sinatra-contrib (1.4.2)
+      backports (>= 2.0)
+      multi_json
+      rack-protection
+      rack-test
+      sinatra (~> 1.4.0)
+      tilt (~> 1.3)
+    sinatra-partial (0.4.0)
+      sinatra
+    thin (1.6.2)
+      daemons (>= 1.0.9)
+      eventmachine (>= 1.0.0)
+      rack (>= 1.0.0)
+    tilt (1.4.1)
+    yui-compressor (0.12.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  dalli
+  etsy (= 0.2.6)
+  memcachier
+  sinatra (= 1.4.4)
+  sinatra-assetpack
+  sinatra-contrib
+  sinatra-partial
+  thin
+  yui-compressor

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title><%= @shop.title %></title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <meta name="robots" content="all" />
+    <meta name="author" content="magicmatt" />
+    <%= css :app, :media => 'screen' %>
+    <%= js  :app %>
+    <% if settings.production? %>
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-xxxxxx-x', 'yourdomain.com');
+        ga('send', 'pageview');
+      </script>
+    <% end %>
+    </head>
+  <body>
+    <%= partial(:'_flash') %>
+    <div id="aboutus_content" style="display:none;">
+        <%= @shop.announcement.gsub("\r\n","<br />") %>
+    </div>
+    <div id="policies_content" style="display:none;">
+      
+        <h3>Welcome</h3>
+        <div><%= @shop.result["policy_welcome"].gsub("\r\n","<br />") %></div>
+      
+        <h3>Payment</h3>
+        <div><%= @shop.result['policy_payment'].gsub("\r\n","<br />") %></div>
+      
+        <h3>Shipping</h3>
+        <div><%= @shop.result['policy_shipping'].gsub("\r\n","<br />") %></div>
+      
+        <h3>Refunds</h3>
+        <div><%= @shop.result['policy_refunds'].gsub("\r\n","<br />") %></div>
+      
+        <h3>Additionals</h3>
+        <div><%= @shop.result['policy_additional'].gsub("\r\n","<br />") %></div>
+        <br />
+        <br />
+    </div>
+    <div id="content">
+      <div id="header" class="clear_wrapper <%= @header_fixed == true ? 'fixed':'' %>">
+        <div class="left outer_logo">
+          <a class="logo" href="/"><%= @shop.name %></a>
+          <div class="site-desc"><%= @shop.title %></div>
+        </div>
+        <div class="right">
+          <div class="clear_wrapper" id="menu">
+            <% @sections.each do |section| %>
+              <a class="trackga <% section == @sections.first ? 'active':'' %>" title="<%= section.title %>" alt="<%= section.title %>" href="/#<%= section.id %>-<%= to_param(section.title) %>" data-scroll-nav="<%= section.id %>"><%= section.title %></a>
+            <% end %>
+          </div>
+        </div>
+        <div class="announcements" style="display:none;">
+          <div class="toggler-preview">
+            <a href="#" class="toggler">
+              <%= @shop.announcement.split("\r\n")[0] %>
+            </a>
+            <div class="toggler-me" style="display:none;">
+              <%= @shop.announcement.gsub("\r\n","<br />") %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="site">
+        <%= yield %>
+      </div>
+    </div>
+    <div id="bottom">
+      <a href="#terms-bottom" class="trackga product-policies">TERMS & POLICIES</a>
+      <a href="#about-us" class="trackga aboutus">ABOUT US</a>
+    </div>
+  </body>
+</html>
+

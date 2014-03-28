@@ -1,0 +1,14 @@
+<div class="announse-frame">Welcome in my shop!</div>
+<% @sections.each do |section| %>
+  <a id="<%= section.id %>-<%= to_param(section.title) %>" class="anchor"></a>
+  <div data-scroll-index="<%= section.id %>" class="section">
+    <h2 class="section-title"><%= section.title %></h2>
+    <div class="section-frame">
+      <ul class="listings clear_wrapper">
+        <% Etsy::Listing.find_all_by_section(@shop.id,section.id,:limit => 30,:state=>:active,:includes=>['Images']).each do |listing| %>
+          <%= partial(:'_product',:locals => { :listing => listing}) %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+<% end %>

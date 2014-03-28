@@ -1,0 +1,65 @@
+<div class="product clear_wrapper">
+  <h1 class="product-title"><%= @listing.title %></h1>
+
+  <div class="product-gallery clear_wrapper left">
+    <div id="picture-slides-frame" class="left">
+      <div id="picture-slides-container">
+        <img alt="" src="<%= @listing.images.first.thumbnail %>" id="picture-slides-image">
+      </div>
+      <ul id="navigation-controls">
+        <li><a id="previous-image" href="/"><div class="arrow-left"></div></a></li>
+        <li><a id="next-image" href="/"><div class="arrow-right"></div></a></li>
+      </ul>
+    </div>
+
+    <div id="picture-slides-thumbnails" class="right">
+      <ul class="clear_wrapper">
+        <% @listing.images.each do |image| %>
+          <li><a href="<%= image.thumbnail %>"><img src="<%= image.square %>" /></a></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+  <div class="product-info right">
+    <div class="product-price">
+      <%= @listing.currency == "USD" ? '$':'' %><%= @listing.price %> <em><%= @listing.currency %></em>
+    </div>
+    <div class="product-details">Quantity: <%= @listing.quantity %></div>
+    <div class="product-details">Materials: <%= @listing.materials.join(', ') %></div>
+    <div class="product-details">Ships worldwide from Poland</div>
+    <div class="product-shipment">
+      <table class="table">
+        <thead><tr><th>Ship to</th><th>Cost</th><th>With another item</th></tr></thead>
+        <tbody>
+        <% @shippings.each do |s| %>
+          <tr><td><%= s.destination_country_name %></td>
+            <td><%= s.primary_cost %></td>
+            <td><%= s.secondary_cost %></td></tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+
+    <a class="small_font product-policies trackga" href="#terms">shop terms & policies</a>
+
+    <a class="btn product-buy" href="<%= @listing.url %>">Buy through ETSY</a>
+    <div style="text-align:center;margin-top:5px;"><img src="/images/payments.png" /></div>
+  </div>
+
+  <div class="product-desc left">
+    <%= @listing.description.gsub("\r\n","<br />") %>
+  </div>
+  <div class="right">
+    <h2 class="tcenter">More related items</h2>
+    <ul class="listings clear_wrapper">
+      <% @section_listings.each do |listing| %>
+        <%= partial(:'_product',:locals => { :listing => listing}) %>
+      <% end %>
+    </ul>
+  </div>
+  
+  
+</div>
+
+  

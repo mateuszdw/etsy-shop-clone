@@ -1,0 +1,10 @@
+<table class="table">
+  <thead><tr><th>Ship to</th><th>Cost</th><th>With another item</th></tr></thead>
+  <tbody>
+  <% @shippings.each do |s| %>
+    <tr><td><%= s.destination_country_name %></td>
+      <td><%= s.primary_cost %></td>
+      <td><%= s.secondary_cost %></td></tr>
+  <% end %>
+  </tbody>
+</table>

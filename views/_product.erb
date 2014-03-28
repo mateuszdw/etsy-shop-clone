@@ -1,0 +1,6 @@
+<li><a href="/product/<%= listing.id %>-<%= to_param(listing.title) %>"><img src="<%= listing.images.first.small %>" /></a>
+  <div class="listing-title"><%= listing.title %></div>
+  <div class="listing-price">
+    <%= listing.currency == "USD" ? '$':'' %><%= listing.price %> <em><%= listing.currency %></em>
+  </div>
+</li>
