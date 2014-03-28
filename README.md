@@ -8,18 +8,17 @@ This App use memcached only, no database needed.
 
 Installation on Heroku (heroku.com)
 ========================
-You must install RVM (Ruby Version Manager) https://rvm.io/rvm/install 
-and Heroku Toolbelt - https://toolbelt.heroku.com/
+You must install RVM (Ruby Version Manager) https://rvm.io/rvm/install, 
+Heroku Toolbelt - https://toolbelt.heroku.com/ and GIT
 
-Then type in console:
-git clone https://github.com/magicmat/sinatra-heroku-etsy-shop.git
-cd ./sinatra-heroku-etsy-shop
-bundle install
-heroku apps:create your-app-name
-git init
-git add .
-git commit -m "init app"
-git push heroku master
+    $ git clone https://github.com/magicmat/sinatra-heroku-etsy-shop.git
+    $ cd ./sinatra-heroku-etsy-shop
+    $ bundle install
+    $ git init
+    $ git add .
+    $ git commit -m "init app"
+    $ heroku apps:create your-app-name
+    $ git push heroku master
 
 Go to your App url your-app-name.herokuapp.com
 
