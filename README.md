@@ -1,8 +1,8 @@
-Etsy Clone Shop (open source)
+Etsy Shop Clone (open source)
 ========================
 
-This App copy your existing Etsy Shop (etsy.com) in minutes using Etsy Api. 
-Etsy Shop on custom domain is usefull, when you need better control over adwords campaign or other marketing actions.
+This App copy your existing Etsy (etsy.com) shop in minutes using Etsy Api. 
+Etsy shop on custom domain is usefull, when you need better control over adwords campaign or other marketing actions.
 
 This App use memcached only, no database needed.
 
@@ -28,7 +28,7 @@ If something goes wrong with Memcachier Addon read more on https://devcenter.her
 
 Configure
 ========================
-1) go to https://www.etsy.com/developers/register and follow by instruction to register your Etsy Clone Shop App and obtain Etsy api keys.
+1) go to https://www.etsy.com/developers/register and follow by instruction to register your Etsy Shop Clone and obtain Etsy api keys.
 
 2) then go to app.rb file and use your keys
  
@@ -42,4 +42,4 @@ Bind your Custom Domain to Heroku - https://devcenter.heroku.com/articles/custom
 
 License
 ========================
-This application is released under the MIT license.
+The MIT License - Copyright (c) 2015 Mateusz Dw
