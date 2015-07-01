@@ -1,4 +1,4 @@
-Etsy Shop Clone (open source)
+Etsy Shop Clone
 ========================
 
 This App copy your existing Etsy (etsy.com) shop in minutes using Etsy Api. 
