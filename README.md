@@ -20,6 +20,12 @@ Heroku Toolbelt - https://toolbelt.heroku.com/ and GIT
     $ heroku apps:create your-app-name
     $ git push heroku master
 
+Etsy Clone Shop use Memcachier Heroku Addon:
+
+    $ heroku addons:add memcachier:dev
+
+If something goes wrong with Memcachier Addon read more on https://devcenter.heroku.com/
+
 Configure
 ========================
 1) go to https://www.etsy.com/developers/register and follow by instruction to register your Etsy Clone Shop App and obtain Etsy api keys.
