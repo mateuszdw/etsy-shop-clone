@@ -3,7 +3,7 @@ GEM
   specs:
     backports (3.6.0)
     daemons (1.1.9)
-    dalli (2.7.0)
+    dalli (3.2.3)
     etsy (0.2.6)
       json (>= 1.5.0)
       oauth (~> 0.4.0)
